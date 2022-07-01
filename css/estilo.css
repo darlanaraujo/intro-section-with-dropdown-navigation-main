@@ -1,0 +1,76 @@
+/* line 3, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/* line 12, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page {
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+}
+
+/* line 17, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .container-limite {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 22, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .topo {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  border: solid 1px red;
+}
+
+/* line 38, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .topo .logo {
+  margin-right: 50px;
+}
+
+/* line 42, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .topo .menu-principal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 47, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .topo .menu-principal ul, .page .topo .menu-principal li {
+  display: flex;
+  gap: 10px;
+}
+
+/* line 52, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .topo .menu-principal .btn-menu {
+  display: block;
+  color: #6d6d6d;
+  padding: 10px;
+}
+
+/* line 61, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .contents {
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 45%;
+}
+
+/* line 67, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .contents .wrapper-img {
+  width: 100%;
+}
+
+/* line 70, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa/scss/estilo.scss */
+.page .contents .wrapper-img .img-destaque {
+  max-width: 480px;
+}
+
+/*# sourceMappingURL=estilo.css.map */

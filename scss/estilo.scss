@@ -1,0 +1,75 @@
+@import 'padroes';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.page {
+    width: 100vw;
+    height: 100%;
+    background-color: #fff;
+    
+    .container-limite {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .topo {
+        display: flex;
+        width: 100%;
+        height: 80px;
+        align-items: center;
+
+        border: solid 1px red;
+        
+        // .wrapper-logo {
+
+        //     width: 150px;
+        //     height: 50px;
+        //     align-items: center;
+        //     border: solid 1px red;
+        // }
+
+        .logo {
+            margin-right: 50px;
+        }
+
+        .menu-principal {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            ul, li {
+                display: flex;
+                gap: 10px;
+            }
+
+            .btn-menu {
+                display: block;
+                color: $corSecundaria;
+                padding: 10px;
+            }
+        }
+    }
+
+    // Conteúdo
+    .contents {
+        margin-top: 50px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 55% 45%;
+
+        .wrapper-img {
+            width: 100%;
+
+            .img-destaque {
+                max-width: 480px;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "estilo.css",
+	"sources": [
+		"../scss/estilo.scss",
+		"../scss/_padroes.scss"
+	],
+	"sourcesContent": [
+		"@import 'padroes';\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    list-style: none;\n    text-decoration: none;\n    font-family: sans-serif;\n}\n\n.page {\n    width: 100vw;\n    height: 100%;\n    background-color: #fff;\n    \n    .container-limite {\n        max-width: 1200px;\n        margin: 0 auto;\n    }\n\n    .topo {\n        display: flex;\n        width: 100%;\n        height: 80px;\n        align-items: center;\n\n        border: solid 1px red;\n        \n        // .wrapper-logo {\n\n        //     width: 150px;\n        //     height: 50px;\n        //     align-items: center;\n        //     border: solid 1px red;\n        // }\n\n        .logo {\n            margin-right: 50px;\n        }\n\n        .menu-principal {\n            width: 100%;\n            display: flex;\n            justify-content: space-between;\n\n            ul, li {\n                display: flex;\n                gap: 10px;\n            }\n\n            .btn-menu {\n                display: block;\n                color: $corSecundaria;\n                padding: 10px;\n            }\n        }\n    }\n\n    // Conteúdo\n    .contents {\n        margin-top: 50px;\n        width: 100%;\n        display: grid;\n        grid-template-columns: 55% 45%;\n\n        .wrapper-img {\n            width: 100%;\n\n            .img-destaque {\n                max-width: 480px;\n            }\n        }\n    }\n}\n",
+		"$corPrimaria: rgb(22, 22, 22);\n$corSecundaria: rgb(109, 109, 109);"
+	],
+	"names": [],
+	"mappings": ";AAEA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,UAAU,EAAE,IAAI;EAChB,eAAe,EAAE,IAAI;EACrB,WAAW,EAAE,UAAU;CAC1B;;;AAED,AAAA,KAAK,CAAC;EACF,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,IAAI;CA4DzB;;;AA/DD,AAKI,KALC,CAKD,iBAAiB,CAAC;EACd,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,MAAM;CACjB;;;AARL,AAUI,KAVC,CAUD,KAAK,CAAC;EACF,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,MAAM;EAEnB,MAAM,EAAE,aAAa;CA8BxB;;;AA9CL,AA0BQ,KA1BH,CAUD,KAAK,CAgBD,KAAK,CAAC;EACF,YAAY,EAAE,IAAI;CACrB;;;AA5BT,AA8BQ,KA9BH,CAUD,KAAK,CAoBD,eAAe,CAAC;EACZ,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CAYjC;;;AA7CT,AAmCY,KAnCP,CAUD,KAAK,CAoBD,eAAe,CAKX,EAAE,EAnCd,KAAK,CAUD,KAAK,CAoBD,eAAe,CAKP,EAAE,CAAC;EACH,OAAO,EAAE,IAAI;EACb,GAAG,EAAE,IAAI;CACZ;;;AAtCb,AAwCY,KAxCP,CAUD,KAAK,CAoBD,eAAe,CAUX,SAAS,CAAC;EACN,OAAO,EAAE,KAAK;EACd,KAAK,ECpDL,OAAkB;EDqDlB,OAAO,EAAE,IAAI;CAChB;;;AA5Cb,AAiDI,KAjDC,CAiDD,SAAS,CAAC;EACN,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,OAAO;CASjC;;;AA9DL,AAuDQ,KAvDH,CAiDD,SAAS,CAML,YAAY,CAAC;EACT,KAAK,EAAE,IAAI;CAKd;;;AA7DT,AA0DY,KA1DP,CAiDD,SAAS,CAML,YAAY,CAGR,aAAa,CAAC;EACV,SAAS,EAAE,KAAK;CACnB"
+}
