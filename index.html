@@ -11,6 +11,9 @@
     <!-- Script -->
     <script src="js/script.js" defer></script>
 
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/109d143e9b.js" crossorigin="anonymous"></script>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     
@@ -23,18 +26,31 @@
                 <figure class="wrapper-logo">
                     <img class="logo" src="img/logo.svg" alt="[Logo Snap]">
                 </figure>
-                <nav class="menu-principal">
-                    <ul class="menu">
-                        <li><a class="btn-menu" href="#">Features</a></li>
-                        <li><a class="btn-menu" href="#">Company</a></li>
+                <nav class="menu">
+                    <ul class="menu-principal">
+                        <li><a class="btn-menu dropdown" href="#">Features<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu">
+                                <li><a class="menu-suspenso" href="#"><img src="img/icon-todo.svg" alt="">Todo List</a></li>
+                                <li><a class="menu-suspenso" href="#"><img src="img/icon-calendar.svg" alt="">Calendar</a></li>
+                                <li><a class="menu-suspenso" href="#"><img src="img/icon-reminders.svg" alt="">Reminders</a></li>
+                                <li><a class="menu-suspenso" href="#"><img src="img/icon-planning.svg" alt="">Planning</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="btn-menu dropdown" href="#">Company<i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="submenu">
+                                <li><a class="menu-suspenso" href="#">History</a></li>
+                                <li><a class="menu-suspenso" href="#">Our Team</a></li>
+                                <li><a class="menu-suspenso" href="#">Blog</a></li>
+                            </ul>
+                        </li>
                         <li><a class="btn-menu" href="#">Careers</a></li>
                         <li><a class="btn-menu" href="#">About</a></li>
                         
                     </ul>
     
-                    <ul class="menu-login">
+                    <ul class="menu-principal">
                         <li><a class="btn-menu" href="#">Login</a></li>
-                        <li><a class="btn-menu" href="#">Register</a></li>
+                        <li><a class="btn-menu btn-menu-register" href="#">Register</a></li>
                     </ul>
                 </nav>
     
@@ -42,7 +58,8 @@
     
             <section class="contents">
                 <div class="wrapper-contents">
-                    <h1 class="titulo-principal">Make remote work</h1>
+                    <h1 class="titulo-principal">Make</h1>
+                    <h1 class="titulo-principal">remote work</h1>
                     <p class="texto">Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
     
                     <a class="btn-saibaMais" href="#">Learn more</a>
@@ -63,7 +80,7 @@
             <footer class="footer">
                 <div class="attribution">
                     Desafio do <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-                    Codificado por <a href="#">Darlan Araujo</a>.
+                    Codificado por <a href="https://github.com/darlanaraujo" target="_blank">Darlan Araujo</a>.
                 </div>
             </footer>
         </div>
