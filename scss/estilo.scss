@@ -1,5 +1,12 @@
 @import 'padroes';
 
+@mixin tablet {
+    @media (max-width: 900px) {
+        @content;
+        transition: .3s;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +20,7 @@
     width: 100vw;
     height: 100%;
     background-color: #fff;
+    position: relative;
     
     .container-limite {
         max-width: 1200px;
@@ -24,10 +32,12 @@
         width: 100%;
         height: 80px;
         align-items: center;
+        padding: 0px 20px;
         
         .wrapper-logo {
 
             .logo {
+                
                 margin-right: 50px;
             }
         }
@@ -48,6 +58,7 @@
                 display: block;
                 color: $corSecundaria;
                 padding: 12px 20px;
+                transition: .5s;
                 cursor: pointer;
 
                 i {
@@ -55,8 +66,22 @@
                     font-size: 12px;
                 }
 
+                i:last-child {
+                    display: none
+                }
+
                 &:hover {
                     color: $corPrimaria;
+                }
+            }
+
+            .btn-menu.active {
+                i:not(:last-child) {
+                    display: none;
+                }
+
+                i:last-child {
+                    display: inline-flex
                 }
             }
 
@@ -74,7 +99,7 @@
                 position: absolute;
                 top: 50px;
                 background-color: #fff;
-                padding: 20px 30px;
+                padding: 20px;
                 border-radius: 15px;
                 box-shadow: 1px 1px 30px rgba($color: #000000, $alpha: .15);
                 z-index: 100;
@@ -102,18 +127,46 @@
 
     // Conteúdo
     .contents {
-        margin-top: 50px;
         width: 100%;
-        display: grid;
-        grid-template-columns: 55% 45%;
+        padding: 50px 90px 0px 120px;
+        display: flex;
         position: relative;
+
+        @include tablet {
+            width: 100%;
+            display: grid;
+            margin-top: 20px;
+            padding: 0;
+        }
 
         .wrapper-contents {
             margin-top: 100px;
+            width: 55%;
+            position: relative;
+
+            @include tablet {
+                grid-row: 2;
+                width: 100%;
+                text-align: center;
+                margin-top: 50px;
+            }
 
             .titulo-principal {
                 font-size: 80px;
                 line-height: 1;
+
+                @include tablet {
+                    font-size: 50px;
+                }
+                
+                span {
+                    display: block;
+
+                    @include tablet {
+                        display: inline;
+                    }
+                }
+
             }
 
             .texto {
@@ -122,6 +175,11 @@
                 font-size: 20px;
                 line-height: 1.5;
                 max-width: 430px;
+
+                @include tablet {
+                    margin: 30px;
+                    max-width: 100%;
+                }
             }
 
             .btn-saibaMais {
@@ -133,35 +191,72 @@
                 background-color: #000;
                 color: #fff;
                 padding: 20px;
-                border-radius: 8px;
+                border: solid 1px #000;
+                border-radius: 15px;
+                margin-bottom: 100px;
+
+                &:hover {
+                    background-color: transparent;
+                    color: #000;
+                }
             }
 
             .wrapper-empresas {
                 position: absolute;
                 bottom: 0;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                justify-items: center;
+                width: 80%;
+                display: flex;
+                gap: 30px;
+                // grid-template-columns: repeat(4, 1fr);
+                
+                @include tablet {
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    gap: 10px;
+                    justify-content: center;
+                }
+
+                .img-empresa {
+                    width: 30%;
+                    max-height: 30px;
+                    
+                }
             }
         }
 
         .wrapper-img {
-            width: 100%;
+            width: 45%;
+
+            @include tablet {
+                grid-row: 1;
+                width: 100%;
+            }
 
             .img-destaque {
-                max-width: 480px;
+                width: 100%;
+
+                @include tablet {
+                    display: none;
+                }
             }
+
+            .img-destaque-mobile {
+                display: none;
+                width: 100%;
+
+                @include tablet {
+                    display: block;
+                }
+            }
+
         }
     }
 
     .footer {
 
         .attribution {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 20px;
-            margin: auto;
+            margin: 50px auto;
             font-size: 11px;
             text-align: center;
         

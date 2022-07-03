@@ -11,6 +11,7 @@
   width: 100vw;
   height: 100%;
   background-color: #fff;
+  position: relative;
 }
 
 .page .container-limite {
@@ -23,6 +24,7 @@
   width: 100%;
   height: 80px;
   align-items: center;
+  padding: 0px 20px;
 }
 
 .page .topo .wrapper-logo .logo {
@@ -45,6 +47,7 @@
   display: block;
   color: #6d6d6d;
   padding: 12px 20px;
+  transition: .5s;
   cursor: pointer;
 }
 
@@ -53,8 +56,20 @@
   font-size: 12px;
 }
 
+.page .topo .menu .btn-menu i:last-child {
+  display: none;
+}
+
 .page .topo .menu .btn-menu:hover {
   color: #161616;
+}
+
+.page .topo .menu .btn-menu.active i:not(:last-child) {
+  display: none;
+}
+
+.page .topo .menu .btn-menu.active i:last-child {
+  display: inline-flex;
 }
 
 .page .topo .menu .btn-menu-register {
@@ -71,7 +86,7 @@
   position: absolute;
   top: 50px;
   background-color: #fff;
-  padding: 20px 30px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.15);
   z-index: 100;
@@ -96,20 +111,59 @@
 }
 
 .page .contents {
-  margin-top: 50px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 55% 45%;
+  padding: 50px 90px 0px 120px;
+  display: flex;
   position: relative;
+}
+
+@media (max-width: 900px) {
+  .page .contents {
+    width: 100%;
+    display: grid;
+    margin-top: 20px;
+    padding: 0;
+    transition: .3s;
+  }
 }
 
 .page .contents .wrapper-contents {
   margin-top: 100px;
+  width: 55%;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-contents {
+    grid-row: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    transition: .3s;
+  }
 }
 
 .page .contents .wrapper-contents .titulo-principal {
   font-size: 80px;
   line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-contents .titulo-principal {
+    font-size: 50px;
+    transition: .3s;
+  }
+}
+
+.page .contents .wrapper-contents .titulo-principal span {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-contents .titulo-principal span {
+    display: inline;
+    transition: .3s;
+  }
 }
 
 .page .contents .wrapper-contents .texto {
@@ -118,6 +172,14 @@
   font-size: 20px;
   line-height: 1.5;
   max-width: 430px;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-contents .texto {
+    margin: 30px;
+    max-width: 100%;
+    transition: .3s;
+  }
 }
 
 .page .contents .wrapper-contents .btn-saibaMais {
@@ -129,31 +191,77 @@
   background-color: #000;
   color: #fff;
   padding: 20px;
-  border-radius: 8px;
+  border: solid 1px #000;
+  border-radius: 15px;
+  margin-bottom: 100px;
+}
+
+.page .contents .wrapper-contents .btn-saibaMais:hover {
+  background-color: transparent;
+  color: #000;
 }
 
 .page .contents .wrapper-contents .wrapper-empresas {
   position: absolute;
   bottom: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  width: 80%;
+  display: flex;
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-contents .wrapper-empresas {
+    left: 0;
+    right: 0;
+    margin: auto;
+    gap: 10px;
+    justify-content: center;
+    transition: .3s;
+  }
+}
+
+.page .contents .wrapper-contents .wrapper-empresas .img-empresa {
+  width: 30%;
+  max-height: 30px;
 }
 
 .page .contents .wrapper-img {
-  width: 100%;
+  width: 45%;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-img {
+    grid-row: 1;
+    width: 100%;
+    transition: .3s;
+  }
 }
 
 .page .contents .wrapper-img .img-destaque {
-  max-width: 480px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-img .img-destaque {
+    display: none;
+    transition: .3s;
+  }
+}
+
+.page .contents .wrapper-img .img-destaque-mobile {
+  display: none;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .page .contents .wrapper-img .img-destaque-mobile {
+    display: block;
+    transition: .3s;
+  }
 }
 
 .page .footer .attribution {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
-  margin: auto;
+  margin: 50px auto;
   font-size: 11px;
   text-align: center;
 }
