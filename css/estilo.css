@@ -1,3 +1,4 @@
+/* line 10, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 * {
   margin: 0;
   padding: 0;
@@ -7,110 +8,8 @@
   font-family: sans-serif;
 }
 
-.page {
-  width: 100vw;
-  height: 100%;
-  background-color: #fff;
-  position: relative;
-}
-
-.page .container-limite {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.page .topo {
-  display: flex;
-  width: 100%;
-  height: 80px;
-  align-items: center;
-  padding: 0px 20px;
-}
-
-.page .topo .wrapper-logo .logo {
-  margin-right: 50px;
-}
-
-.page .topo .menu {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-
-.page .topo .menu ul, .page .topo .menu li {
-  display: flex;
-  gap: 10px;
-}
-
-.page .topo .menu .btn-menu {
-  display: block;
-  color: #6d6d6d;
-  padding: 12px 20px;
-  transition: .5s;
-  cursor: pointer;
-}
-
-.page .topo .menu .btn-menu i {
-  margin-left: 10px;
-  font-size: 12px;
-}
-
-.page .topo .menu .btn-menu i:last-child {
-  display: none;
-}
-
-.page .topo .menu .btn-menu:hover {
-  color: #161616;
-}
-
-.page .topo .menu .btn-menu.active i:not(:last-child) {
-  display: none;
-}
-
-.page .topo .menu .btn-menu.active i:last-child {
-  display: inline-flex;
-}
-
-.page .topo .menu .btn-menu-register {
-  border: solid 2px #6d6d6d;
-  border-radius: 15px;
-}
-
-.page .topo .menu .btn-menu-register:hover {
-  border-color: #161616;
-}
-
-.page .topo .menu .submenu {
-  display: none;
-  position: absolute;
-  top: 50px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.15);
-  z-index: 100;
-}
-
-.page .topo .menu .submenu .menu-suspenso {
-  padding: 10px;
-  color: #6d6d6d;
-  cursor: pointer;
-}
-
-.page .topo .menu .submenu .menu-suspenso img {
-  margin-right: 15px;
-}
-
-.page .topo .menu .submenu .menu-suspenso:hover {
-  color: #161616;
-}
-
-.page .topo .menu .submenu.active {
-  display: block;
-}
-
-.page .contents {
+/* line 20, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents {
   width: 100%;
   padding: 50px 90px 0px 120px;
   display: flex;
@@ -118,7 +17,8 @@
 }
 
 @media (max-width: 900px) {
-  .page .contents {
+  /* line 20, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents {
     width: 100%;
     display: grid;
     margin-top: 20px;
@@ -127,14 +27,16 @@
   }
 }
 
-.page .contents .wrapper-contents {
+/* line 33, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents {
   margin-top: 100px;
   width: 55%;
   position: relative;
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-contents {
+  /* line 33, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-contents {
     grid-row: 2;
     width: 100%;
     text-align: center;
@@ -143,30 +45,35 @@
   }
 }
 
-.page .contents .wrapper-contents .titulo-principal {
+/* line 45, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .titulo-principal {
   font-size: 80px;
   line-height: 1;
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-contents .titulo-principal {
+  /* line 45, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-contents .titulo-principal {
     font-size: 50px;
     transition: .3s;
   }
 }
 
-.page .contents .wrapper-contents .titulo-principal span {
+/* line 53, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .titulo-principal span {
   display: block;
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-contents .titulo-principal span {
+  /* line 53, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-contents .titulo-principal span {
     display: inline;
     transition: .3s;
   }
 }
 
-.page .contents .wrapper-contents .texto {
+/* line 63, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .texto {
   margin: 72px 0 60px 0;
   color: #6d6d6d;
   font-size: 20px;
@@ -175,14 +82,16 @@
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-contents .texto {
+  /* line 63, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-contents .texto {
     margin: 30px;
     max-width: 100%;
     transition: .3s;
   }
 }
 
-.page .contents .wrapper-contents .btn-saibaMais {
+/* line 76, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .btn-saibaMais {
   display: inline-block;
   width: 164px;
   height: 56px;
@@ -196,12 +105,14 @@
   margin-bottom: 100px;
 }
 
-.page .contents .wrapper-contents .btn-saibaMais:hover {
+/* line 89, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .btn-saibaMais:hover {
   background-color: transparent;
   color: #000;
 }
 
-.page .contents .wrapper-contents .wrapper-empresas {
+/* line 95, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .wrapper-empresas {
   position: absolute;
   bottom: 0;
   width: 80%;
@@ -210,7 +121,8 @@
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-contents .wrapper-empresas {
+  /* line 95, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-contents .wrapper-empresas {
     left: 0;
     right: 0;
     margin: auto;
@@ -220,52 +132,63 @@
   }
 }
 
-.page .contents .wrapper-contents .wrapper-empresas .img-empresa {
+/* line 111, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-contents .wrapper-empresas .img-empresa {
   width: 30%;
   max-height: 30px;
 }
 
-.page .contents .wrapper-img {
+/* line 119, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-img {
   width: 45%;
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-img {
+  /* line 119, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-img {
     grid-row: 1;
     width: 100%;
     transition: .3s;
   }
 }
 
-.page .contents .wrapper-img .img-destaque {
+/* line 127, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-img .img-destaque {
   width: 100%;
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-img .img-destaque {
+  /* line 127, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-img .img-destaque {
     display: none;
     transition: .3s;
   }
 }
 
-.page .contents .wrapper-img .img-destaque-mobile {
+/* line 135, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.contents .wrapper-img .img-destaque-mobile {
   display: none;
   width: 100%;
 }
 
 @media (max-width: 900px) {
-  .page .contents .wrapper-img .img-destaque-mobile {
+  /* line 135, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+  .contents .wrapper-img .img-destaque-mobile {
     display: block;
     transition: .3s;
   }
 }
 
-.page .footer .attribution {
+/* line 149, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.footer .attribution {
   margin: 50px auto;
   font-size: 11px;
   text-align: center;
 }
 
-.page .footer .attribution a {
+/* line 154, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.footer .attribution a {
   color: #3e52a3;
 }
+
+/*# sourceMappingURL=estilo.css.map */
