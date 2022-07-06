@@ -71,6 +71,7 @@
     width: 100%;
   }
   .page.active .menu .menu-principal .btn-menu {
+    padding: 12px 0px;
     display: block;
     animation: menu-sub .5s forwards;
   }
@@ -163,7 +164,7 @@
 }
 
 .menu .menu-principal .btn-menu {
-  padding: 12px 0px;
+  padding: 12px 20px;
   color: #6d6d6d;
   cursor: pointer;
   transition: .5s;
