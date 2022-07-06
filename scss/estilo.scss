@@ -1,4 +1,5 @@
 @import 'padroes';
+@import 'animacoes';
 
 @mixin tablet {
     @media (max-width: 900px) {
@@ -14,6 +15,213 @@
     list-style: none;
     text-decoration: none;
     font-family: sans-serif;
+}
+
+// Geral
+.page {
+    position: relative;
+
+    @include tablet {
+        &.active {
+            .background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .7);
+                z-index: 1000 !important;
+                transition: .5s all;
+            }
+
+            .menu-mobile {
+                position: fixed;
+                top: 25px;
+                right: 25px;
+                z-index: 2001;
+            }
+
+            .menu {
+                position: fixed;
+                width: 240px;
+                top: 0;
+                right: 0;
+                height: 100vmax;
+                background-color: #fff;
+                display: block;
+                padding: 70px 20px;
+                transition: .5s all;
+                z-index: 2000;
+                animation: menu-down .5s forwards;
+
+                .menu-principal {
+                    display: block;
+                    width: 100%;
+
+                    .btn-menu {
+                        display: block;
+                        animation: menu-sub .5s forwards;
+                    }
+
+                    
+                }
+
+                .menu-login {
+                    text-align: center;
+                    margin-top: 30px;
+                }
+            }
+
+            .submenu {
+
+                padding: 10px 30px;
+                display: none;
+                transition: .5s;
+
+                .menu-suspenso {
+                    display: block;
+                    animation: menu-sub .5s forwards;
+                }
+
+                &.active {
+                    background-color: transparent;
+                    display: block;
+                    position: inherit;
+                    transition: .5s;
+                    box-shadow: none;
+                    padding: 0px 15px;
+                }
+            }
+        }
+    }
+}
+
+// Topo
+.topo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 70px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.wrapper-menu-mobile {
+    .menu-mobile {
+        display: none;
+
+        @include tablet {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    @include tablet {
+        .close {
+            display: none;
+        }
+
+        .open {
+            display: block;
+        }
+    }
+
+    &.active {
+        @include tablet {
+            .close {
+                display: block;
+            }
+
+            .open {
+                display: none;
+            }
+        }
+    }
+
+}
+
+.menu {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+        display: none;
+        transition: .5s all;
+    }
+
+    .menu-principal {
+        display: flex;
+        gap: 10px;
+
+        .btn-menu {
+            padding: 12px 0px;
+            color: #6d6d6d;;
+            cursor: pointer;
+            transition: .5s;
+
+            i {
+                margin-left: 10px;
+                font-size: 12px;
+                width: 10.5px;
+            }
+            
+            i:last-child {
+                display: none
+            }
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+        .btn-menu.active i:not(:last-child) {
+            display: none;
+        }
+        
+        .btn-menu.active i:last-child {
+            display: inline-flex
+        }
+
+        .btn-menu-register {
+            border: solid 2px;
+            border-radius: 10px;
+        }
+
+        // Submenu
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            transition: .5s;
+            box-shadow: 1px 1px 30px rgba(0, 0, 0, .15);
+            z-index: 2000;
+        }
+
+        .submenu.active {
+            display: block;
+            animation: menu-sub .5s forwards;
+
+            .menu-suspenso {
+                display: block;
+                padding: 5px;
+                color: #6d6d6d;;
+                cursor: pointer;
+
+                img {
+                    margin-right: 15px;
+                }
+
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
 }
 
 // Conteúdo
@@ -145,11 +353,14 @@
 }
 
 .footer {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
 
     .attribution {
-        margin: 50px auto;
         font-size: 11px;
         text-align: center;
+        line-height: 30px;
     
         & a {
             color: hsl(228, 45%, 44%);

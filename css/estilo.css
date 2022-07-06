@@ -1,4 +1,25 @@
-/* line 10, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+@keyframes menu-down {
+  from {
+    transform: translate3d(0px, -250px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-sub {
+  from {
+    transform: translate3d(0px, -50px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +29,205 @@
   font-family: sans-serif;
 }
 
-/* line 20, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.page {
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .page {
+    transition: .3s;
+  }
+  .page.active .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000 !important;
+    transition: .5s all;
+  }
+  .page.active .menu-mobile {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 2001;
+  }
+  .page.active .menu {
+    position: fixed;
+    width: 240px;
+    top: 0;
+    right: 0;
+    height: 100vmax;
+    background-color: #fff;
+    display: block;
+    padding: 70px 20px;
+    transition: .5s all;
+    z-index: 2000;
+    animation: menu-down .5s forwards;
+  }
+  .page.active .menu .menu-principal {
+    display: block;
+    width: 100%;
+  }
+  .page.active .menu .menu-principal .btn-menu {
+    display: block;
+    animation: menu-sub .5s forwards;
+  }
+  .page.active .menu .menu-login {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .page.active .submenu {
+    padding: 10px 30px;
+    display: none;
+    transition: .5s;
+  }
+  .page.active .submenu .menu-suspenso {
+    display: block;
+    animation: menu-sub .5s forwards;
+  }
+  .page.active .submenu.active {
+    background-color: transparent;
+    display: block;
+    position: inherit;
+    transition: .5s;
+    box-shadow: none;
+    padding: 0px 15px;
+  }
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 70px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.wrapper-menu-mobile .menu-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .wrapper-menu-mobile .menu-mobile {
+    display: block;
+    cursor: pointer;
+    transition: .3s;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper-menu-mobile {
+    transition: .3s;
+  }
+  .wrapper-menu-mobile .close {
+    display: none;
+  }
+  .wrapper-menu-mobile .open {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper-menu-mobile.active {
+    transition: .3s;
+  }
+  .wrapper-menu-mobile.active .close {
+    display: block;
+  }
+  .wrapper-menu-mobile.active .open {
+    display: none;
+  }
+}
+
+.menu {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+    transition: .5s all;
+    transition: .3s;
+  }
+}
+
+.menu .menu-principal {
+  display: flex;
+  gap: 10px;
+}
+
+.menu .menu-principal .btn-menu {
+  padding: 12px 0px;
+  color: #6d6d6d;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.menu .menu-principal .btn-menu i {
+  margin-left: 10px;
+  font-size: 12px;
+  width: 10.5px;
+}
+
+.menu .menu-principal .btn-menu i:last-child {
+  display: none;
+}
+
+.menu .menu-principal .btn-menu:hover {
+  color: #000;
+}
+
+.menu .menu-principal .btn-menu.active i:not(:last-child) {
+  display: none;
+}
+
+.menu .menu-principal .btn-menu.active i:last-child {
+  display: inline-flex;
+}
+
+.menu .menu-principal .btn-menu-register {
+  border: solid 2px;
+  border-radius: 10px;
+}
+
+.menu .menu-principal .submenu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  transition: .5s;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+}
+
+.menu .menu-principal .submenu.active {
+  display: block;
+  animation: menu-sub .5s forwards;
+}
+
+.menu .menu-principal .submenu.active .menu-suspenso {
+  display: block;
+  padding: 5px;
+  color: #6d6d6d;
+  cursor: pointer;
+}
+
+.menu .menu-principal .submenu.active .menu-suspenso img {
+  margin-right: 15px;
+}
+
+.menu .menu-principal .submenu.active .menu-suspenso:hover {
+  color: #000;
+}
+
 .contents {
   width: 100%;
   padding: 50px 90px 0px 120px;
@@ -17,7 +236,6 @@
 }
 
 @media (max-width: 900px) {
-  /* line 20, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents {
     width: 100%;
     display: grid;
@@ -27,7 +245,6 @@
   }
 }
 
-/* line 33, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents {
   margin-top: 100px;
   width: 55%;
@@ -35,7 +252,6 @@
 }
 
 @media (max-width: 900px) {
-  /* line 33, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-contents {
     grid-row: 2;
     width: 100%;
@@ -45,34 +261,29 @@
   }
 }
 
-/* line 45, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .titulo-principal {
   font-size: 80px;
   line-height: 1;
 }
 
 @media (max-width: 900px) {
-  /* line 45, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-contents .titulo-principal {
     font-size: 50px;
     transition: .3s;
   }
 }
 
-/* line 53, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .titulo-principal span {
   display: block;
 }
 
 @media (max-width: 900px) {
-  /* line 53, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-contents .titulo-principal span {
     display: inline;
     transition: .3s;
   }
 }
 
-/* line 63, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .texto {
   margin: 72px 0 60px 0;
   color: #6d6d6d;
@@ -82,7 +293,6 @@
 }
 
 @media (max-width: 900px) {
-  /* line 63, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-contents .texto {
     margin: 30px;
     max-width: 100%;
@@ -90,7 +300,6 @@
   }
 }
 
-/* line 76, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .btn-saibaMais {
   display: inline-block;
   width: 164px;
@@ -105,13 +314,11 @@
   margin-bottom: 100px;
 }
 
-/* line 89, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .btn-saibaMais:hover {
   background-color: transparent;
   color: #000;
 }
 
-/* line 95, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .wrapper-empresas {
   position: absolute;
   bottom: 0;
@@ -121,7 +328,6 @@
 }
 
 @media (max-width: 900px) {
-  /* line 95, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-contents .wrapper-empresas {
     left: 0;
     right: 0;
@@ -132,19 +338,16 @@
   }
 }
 
-/* line 111, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-contents .wrapper-empresas .img-empresa {
   width: 30%;
   max-height: 30px;
 }
 
-/* line 119, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-img {
   width: 45%;
 }
 
 @media (max-width: 900px) {
-  /* line 119, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-img {
     grid-row: 1;
     width: 100%;
@@ -152,43 +355,41 @@
   }
 }
 
-/* line 127, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-img .img-destaque {
   width: 100%;
 }
 
 @media (max-width: 900px) {
-  /* line 127, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-img .img-destaque {
     display: none;
     transition: .3s;
   }
 }
 
-/* line 135, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
 .contents .wrapper-img .img-destaque-mobile {
   display: none;
   width: 100%;
 }
 
 @media (max-width: 900px) {
-  /* line 135, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
   .contents .wrapper-img .img-destaque-mobile {
     display: block;
     transition: .3s;
   }
 }
 
-/* line 149, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
-.footer .attribution {
-  margin: 50px auto;
-  font-size: 11px;
-  text-align: center;
+.footer {
+  margin-top: 20px;
+  width: 100%;
+  height: 30px;
 }
 
-/* line 154, ../../../../../Volumes/macOs-Dados/TRABALHOS/github/ESTUDO/frontend-mentor/introducao-com-navegacao-suspensa2/scss/estilo.scss */
+.footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  line-height: 30px;
+}
+
 .footer .attribution a {
   color: #3e52a3;
 }
-
-/*# sourceMappingURL=estilo.css.map */
